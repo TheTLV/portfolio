@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TheTLV | DevOps & Software Engineer</title>
   
-  <!-- Fonts: Orbitron & Rajdhani (Cyberpunk / Sci-Fi Tech Vibe như kietta.me) -->
+  <!-- Modern Tech Fonts with Full Vietnamese Support -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -22,16 +22,16 @@
       theme: {
         extend: {
           colors: {
-            cyberDark: '#080b12',
-            cyberCard: '#0f172a',
+            cyberDark: '#0a0d14',
+            cyberCard: '#111726',
             neonCyan: '#00d4ff',
-            neonBlue: '#0066ff',
-            neonPurple: '#a855f7',
+            neonBlue: '#2563eb',
+            sendoRed: '#E5101E',
           },
           fontFamily: {
-            orbitron: ['Orbitron', 'sans-serif'],
-            rajdhani: ['Rajdhani', 'sans-serif'],
-            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
           }
         }
       }
@@ -39,36 +39,35 @@
   </script>
 
   <style>
-    /* Tech Background Grid */
+    /* Clean Tech Grid Background */
     body {
-      background-color: #080b12;
+      background-color: #090d16;
       background-image: 
-        radial-gradient(circle at 15% 20%, rgba(0, 212, 255, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 85% 70%, rgba(168, 85, 247, 0.08) 0%, transparent 45%),
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+        radial-gradient(circle at 20% 15%, rgba(0, 212, 255, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 80% 65%, rgba(37, 99, 235, 0.07) 0%, transparent 45%),
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
       color: #e2e8f0;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     }
 
     /* Glow Effects */
-    .glow-cyan {
-      box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
-    }
     .glow-cyan-hover:hover {
-      box-shadow: 0 0 25px rgba(0, 212, 255, 0.35);
-      border-color: #00d4ff;
+      box-shadow: 0 0 25px rgba(0, 212, 255, 0.2);
+      border-color: rgba(0, 212, 255, 0.6);
     }
-    .text-glow {
-      text-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+    .glow-sendo-hover:hover {
+      box-shadow: 0 0 25px rgba(229, 16, 30, 0.25);
+      border-color: rgba(229, 16, 30, 0.6);
     }
-    
-    /* Custom Scrollbar */
+
+    /* Smooth Scrollbar */
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 7px;
     }
     ::-webkit-scrollbar-track {
-      background: #080b12;
+      background: #090d16;
     }
     ::-webkit-scrollbar-thumb {
       background: #1e293b;
@@ -82,27 +81,27 @@
 <body class="font-sans antialiased selection:bg-neonCyan selection:text-black">
 
   <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-[#080b12]/80 backdrop-blur-md border-b border-slate-800">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#090d16]/85 backdrop-blur-md border-b border-slate-800/80">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="#hero" class="flex items-center gap-2 group">
-        <span class="font-orbitron font-bold text-xl tracking-wider text-neonCyan text-glow group-hover:scale-105 transition-transform">
-          &lt;TheTLV /&gt;
+        <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-neonCyan transition-colors">
+          TheTLV<span class="text-neonCyan">.</span>
         </span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 font-rajdhani text-lg font-semibold tracking-wide">
-        <a href="#about" class="text-slate-400 hover:text-neonCyan transition-colors">01. ABOUT</a>
-        <a href="#experience" class="text-slate-400 hover:text-neonCyan transition-colors">02. EXPERIENCE</a>
-        <a href="#skills" class="text-slate-400 hover:text-neonCyan transition-colors">03. SKILLS</a>
-        <a href="#projects" class="text-slate-400 hover:text-neonCyan transition-colors">04. PROJECTS</a>
-        <a href="#contact" class="text-slate-400 hover:text-neonCyan transition-colors">05. CONTACT</a>
+      <nav class="hidden md:flex items-center gap-8 font-mono text-xs tracking-wider uppercase">
+        <a href="#about" class="text-slate-400 hover:text-neonCyan transition-colors"><span class="text-neonCyan mr-1">01.</span>About</a>
+        <a href="#experience" class="text-slate-400 hover:text-neonCyan transition-colors"><span class="text-neonCyan mr-1">02.</span>Experience</a>
+        <a href="#skills" class="text-slate-400 hover:text-neonCyan transition-colors"><span class="text-neonCyan mr-1">03.</span>Skills</a>
+        <a href="#projects" class="text-slate-400 hover:text-neonCyan transition-colors"><span class="text-neonCyan mr-1">04.</span>Projects</a>
+        <a href="#contact" class="text-slate-400 hover:text-neonCyan transition-colors"><span class="text-neonCyan mr-1">05.</span>Contact</a>
       </nav>
 
       <div class="flex items-center gap-3">
         <a href="https://github.com/TheTLV" target="_blank" rel="noopener noreferrer"
-           class="px-4 py-1.5 rounded-lg border border-neonCyan/40 text-neonCyan hover:bg-neonCyan/10 transition-all text-sm font-rajdhani font-bold flex items-center gap-2">
-          <i class="fa-brands fa-github"></i>
-          <span>GITHUB</span>
+           class="px-3.5 py-1.5 rounded-lg border border-slate-700 bg-slate-900/60 hover:border-neonCyan text-slate-300 hover:text-neonCyan transition-all text-xs font-mono font-medium flex items-center gap-2">
+          <i class="fa-brands fa-github text-sm"></i>
+          <span>GitHub</span>
         </a>
       </div>
     </div>
@@ -111,38 +110,38 @@
   <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-20">
 
     <!-- HERO SECTION -->
-    <section id="hero" class="min-h-[80vh] flex flex-col justify-center">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-rajdhani font-semibold tracking-widest uppercase mb-6 w-fit">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-        <span>Open for Opportunities & Systems Architecture</span>
+    <section id="hero" class="min-h-[78vh] flex flex-col justify-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-mono font-medium tracking-wide mb-6 w-fit">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Open to Opportunities & Infrastructure Challenges</span>
       </div>
 
-      <h2 class="font-rajdhani text-slate-400 text-xl sm:text-2xl font-bold tracking-widest uppercase">
+      <p class="font-mono text-neonCyan text-sm sm:text-base font-semibold tracking-wide uppercase mb-3">
         Xin chào, tôi là
-      </h2>
-      <h1 class="font-orbitron font-black text-4xl sm:text-6xl lg:text-7xl text-white tracking-tight my-3">
+      </p>
+      <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-white tracking-tight my-2">
         TheTLV<span class="text-neonCyan">.</span>
       </h1>
-      <h3 class="font-rajdhani font-bold text-2xl sm:text-3xl text-slate-300 tracking-wide mb-6">
+      <h2 class="font-display font-bold text-2xl sm:text-4xl text-slate-300 tracking-tight mb-6">
         DevOps & Software Engineer
-      </h3>
+      </h2>
 
       <p class="max-w-2xl text-slate-400 text-base sm:text-lg leading-relaxed mb-8">
-        Tập trung vào tối ưu hóa hạ tầng, container hóa hệ thống, tự động hóa quy trình triển khai và xây dựng backend đáng tin cậy. Đam mê với việc biến hệ thống phức tạp trở nên ổn định và hiệu quả.
+        Kỹ sư phần mềm tập trung vào tối ưu hóa hạ tầng, container hóa hệ thống với <strong>Docker</strong>, tự động hóa quy trình với <strong>Python</strong>, cùng các giải pháp backend và cơ sở dữ liệu đáng tin cậy.
       </p>
 
       <div class="flex flex-wrap items-center gap-4">
         <a href="#experience" 
-           class="px-6 py-3 rounded-lg bg-neonCyan text-black font-rajdhani font-bold text-lg hover:bg-cyan-300 transition-all flex items-center gap-2">
-          <span>Kinh nghiệm làm việc</span>
-          <i class="fa-solid fa-arrow-right text-sm"></i>
+           class="px-6 py-3 rounded-lg bg-neonCyan text-black font-semibold text-sm sm:text-base hover:bg-cyan-300 transition-all flex items-center gap-2 shadow-lg shadow-neonCyan/10">
+          <span>Xem kinh nghiệm</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
         <a href="#projects" 
-           class="px-6 py-3 rounded-lg border border-slate-700 hover:border-neonCyan text-slate-300 hover:text-white transition-all font-rajdhani font-bold text-lg">
-          Dự án & Khung hệ thống
+           class="px-6 py-3 rounded-lg border border-slate-700 bg-slate-900/50 hover:border-slate-500 text-slate-200 transition-all font-semibold text-sm sm:text-base">
+          Dự án & Kiến trúc
         </a>
         <a href="#contact" 
-           class="px-6 py-3 rounded-lg border border-transparent text-slate-400 hover:text-neonCyan transition-all font-rajdhani font-bold text-lg flex items-center gap-2">
+           class="px-6 py-3 rounded-lg text-slate-400 hover:text-white transition-all font-semibold text-sm sm:text-base flex items-center gap-2">
           <i class="fa-regular fa-envelope"></i>
           <span>Liên hệ</span>
         </a>
@@ -152,43 +151,43 @@
     <!-- ABOUT SECTION -->
     <section id="about" class="py-20 border-t border-slate-800/80">
       <div class="flex items-center gap-3 mb-10">
-        <span class="font-orbitron text-neonCyan text-xl font-bold">01.</span>
-        <h2 class="font-orbitron text-2xl sm:text-3xl font-bold text-white tracking-wide">Về Tôi</h2>
+        <span class="font-mono text-neonCyan text-sm font-semibold">01.</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">Về Tôi</h2>
         <div class="h-[1px] flex-1 bg-slate-800 ml-4"></div>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8 items-start">
-        <div class="md:col-span-2 space-y-4 text-slate-400 leading-relaxed text-base sm:text-lg">
+        <div class="md:col-span-2 space-y-4 text-slate-400 leading-relaxed text-base">
           <p>
-            Tôi là một kỹ sư phần mềm với định hướng chuyên sâu về <span class="text-white font-semibold">DevOps</span> và <span class="text-white font-semibold">Hệ thống Backend</span>. Tôi yêu thích việc tự động hóa, xây dựng các luồng CI/CD, chuẩn hóa quy trình deploy ứng dụng và đảm bảo các dịch vụ hoạt động với hiệu suất tối ưu.
+            Tôi là một kỹ sư phần mềm với niềm đam mê sâu sắc dành cho <span class="text-white font-medium">DevOps</span> và <span class="text-white font-medium">Kiến trúc Hệ thống</span>. Mục tiêu hàng đầu của tôi là xây dựng quy trình triển khai tự động hóa mượt mà, loại bỏ các thao tác thủ công dễ xảy ra sai sót và đảm bảo dịch vụ luôn hoạt động liên tục.
           </p>
           <p>
-            Hiện tại, tôi tập trung áp dụng các công nghệ như <span class="text-neonCyan">Docker</span>, lập trình tự động hóa với <span class="text-neonCyan">Python</span>, xây dựng và tích hợp dịch vụ bằng <span class="text-neonCyan">C#</span> cùng hệ quản trị cơ sở dữ liệu mạnh mẽ <span class="text-neonCyan">PostgreSQL</span>.
+            Trong công việc, tôi trực tiếp làm việc với công nghệ container hóa <span class="text-neonCyan font-medium">Docker</span>, lập trình tự động hóa bằng <span class="text-neonCyan font-medium">Python</span>, phát triển & tích hợp dịch vụ backend trên nền tảng <span class="text-neonCyan font-medium">C#</span> và tối ưu hóa hệ quản trị cơ sở dữ liệu <span class="text-neonCyan font-medium">PostgreSQL</span>.
           </p>
           <p>
-            Tác phong làm việc của tôi hướng tới sự chắc chắn, tính thực tế và tối ưu hiệu quả lâu dài thay vì sự rườm rà.
+            Tôi đề cao sự trung thực, tinh thần kỷ luật kỹ thuật và tư duy thực chiến – ưu tiên sự ổn định và hiệu quả thực tế của sản phẩm.
           </p>
         </div>
 
         <!-- Quick Summary Box -->
         <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 glow-cyan-hover transition-all">
-          <h3 class="font-orbitron text-sm font-bold text-neonCyan uppercase tracking-widest mb-4">Thông tin cốt lõi</h3>
-          <ul class="space-y-3 font-rajdhani text-base">
+          <h3 class="font-mono text-xs font-semibold text-neonCyan uppercase tracking-wider mb-4">// Quick Snapshot</h3>
+          <ul class="space-y-3 font-sans text-sm">
             <li class="flex items-center justify-between border-b border-slate-800/60 pb-2">
-              <span class="text-slate-500">Chuyên môn:</span>
-              <span class="text-white font-semibold">DevOps / Software Eng</span>
+              <span class="text-slate-500">Chuyên môn</span>
+              <span class="text-white font-medium">DevOps / Software Eng</span>
             </li>
             <li class="flex items-center justify-between border-b border-slate-800/60 pb-2">
-              <span class="text-slate-500">Kinh nghiệm:</span>
-              <span class="text-white font-semibold">DevOps @ Sendo</span>
+              <span class="text-slate-500">Kinh nghiệm</span>
+              <span class="text-white font-medium">DevOps @ Sendo</span>
             </li>
             <li class="flex items-center justify-between border-b border-slate-800/60 pb-2">
-              <span class="text-slate-500">Địa điểm:</span>
-              <span class="text-white font-semibold">Việt Nam</span>
+              <span class="text-slate-500">Khu vực</span>
+              <span class="text-white font-medium">Việt Nam</span>
             </li>
             <li class="flex items-center justify-between">
-              <span class="text-slate-500">Trạng thái:</span>
-              <span class="text-emerald-400 font-semibold">Sẵn sàng cộng tác</span>
+              <span class="text-slate-500">Trạng thái</span>
+              <span class="text-emerald-400 font-medium">Sẵn sàng cộng tác</span>
             </li>
           </ul>
         </div>
@@ -198,59 +197,70 @@
     <!-- EXPERIENCE SECTION -->
     <section id="experience" class="py-20 border-t border-slate-800/80">
       <div class="flex items-center gap-3 mb-10">
-        <span class="font-orbitron text-neonCyan text-xl font-bold">02.</span>
-        <h2 class="font-orbitron text-2xl sm:text-3xl font-bold text-white tracking-wide">Kinh Nghiệm Làm Việc</h2>
+        <span class="font-mono text-neonCyan text-sm font-semibold">02.</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">Kinh Nghiệm Làm Việc</h2>
         <div class="h-[1px] flex-1 bg-slate-800 ml-4"></div>
       </div>
 
-      <!-- Experience Card: Sendo -->
-      <div class="relative bg-slate-900/50 border border-slate-800 rounded-xl p-6 sm:p-8 hover:border-neonCyan/60 transition-all glow-cyan-hover">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-          <div>
-            <span class="inline-block px-2.5 py-0.5 rounded text-xs font-rajdhani font-bold bg-neonCyan/10 text-neonCyan border border-neonCyan/30 mb-2">
-              E-COMMERCE PLATFORM
-            </span>
-            <h3 class="font-orbitron text-xl sm:text-2xl font-bold text-white">
-              DevOps Engineer <span class="text-neonCyan">@ Sendo</span>
-            </h3>
+      <!-- Experience Card: Sendo with Official Logo -->
+      <div class="relative bg-gradient-to-b from-slate-900/80 to-slate-900/40 border border-slate-800 rounded-xl p-6 sm:p-8 hover:border-red-500/50 transition-all duration-300 glow-sendo-hover">
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
+          <div class="flex items-start gap-4">
+            <!-- Official Sendo Logo Icon -->
+            <div class="w-14 h-14 rounded-xl bg-white/95 p-2 flex items-center justify-center shrink-0 shadow-md shadow-red-500/10 border border-slate-700">
+              <img src="assets/sendo-logo.svg" alt="Sendo Official Logo" class="w-full h-full object-contain" />
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-display text-xl sm:text-2xl font-bold text-white">
+                  DevOps Engineer
+                </span>
+                <span class="text-red-500 font-bold text-lg">@ Sendo</span>
+              </div>
+              <p class="text-slate-400 text-xs sm:text-sm font-medium">
+                Công ty Cổ phần Công nghệ Sen Đỏ (FPT Group) • Sàn Thương mại Điện tử
+              </p>
+            </div>
           </div>
-          <span class="font-rajdhani text-slate-400 font-semibold text-base sm:text-lg">
-            Thời gian: Hiện tại
+
+          <span class="font-mono text-xs sm:text-sm text-slate-400 bg-slate-800/60 px-3 py-1.5 rounded-md border border-slate-700/60 self-start">
+            Hiện tại
           </span>
         </div>
 
-        <!-- Tech Stack Tags -->
+        <!-- Tech Stack Badges -->
         <div class="flex flex-wrap gap-2 mb-6">
-          <span class="px-3 py-1 bg-slate-800/80 border border-slate-700 rounded-md text-xs font-rajdhani font-bold text-neonCyan">
-            <i class="fa-brands fa-docker mr-1"></i> Docker
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-cyan-950/40 border border-cyan-800/50 rounded-md text-xs font-mono font-medium text-cyan-300">
+            <i class="fa-brands fa-docker"></i> Docker
           </span>
-          <span class="px-3 py-1 bg-slate-800/80 border border-slate-700 rounded-md text-xs font-rajdhani font-bold text-purple-400">
-            <i class="fa-solid fa-code mr-1"></i> C#
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-purple-950/40 border border-purple-800/50 rounded-md text-xs font-mono font-medium text-purple-300">
+            <i class="fa-solid fa-code"></i> C#
           </span>
-          <span class="px-3 py-1 bg-slate-800/80 border border-slate-700 rounded-md text-xs font-rajdhani font-bold text-yellow-400">
-            <i class="fa-brands fa-python mr-1"></i> Python
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-950/40 border border-amber-800/50 rounded-md text-xs font-mono font-medium text-amber-300">
+            <i class="fa-brands fa-python"></i> Python
           </span>
-          <span class="px-3 py-1 bg-slate-800/80 border border-slate-700 rounded-md text-xs font-rajdhani font-bold text-blue-400">
-            <i class="fa-solid fa-database mr-1"></i> PostgreSQL
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-950/40 border border-blue-800/50 rounded-md text-xs font-mono font-medium text-blue-300">
+            <i class="fa-solid fa-database"></i> PostgreSQL
           </span>
         </div>
 
-        <!-- Role description -->
-        <ul class="space-y-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+        <!-- Detailed responsibilities -->
+        <ul class="space-y-3 text-slate-300 text-sm leading-relaxed">
           <li class="flex items-start gap-3">
-            <span class="text-neonCyan mt-1">▹</span>
-            <span>Triển khai và chuẩn hóa giải pháp <strong>container hóa (Docker)</strong> cho các service, tối ưu hóa kích thước image và môi trường runtime an toàn, cô lập.</span>
+            <span class="text-red-500 mt-1">▹</span>
+            <span>Triển khai và chuẩn hóa giải pháp <strong>container hóa (Docker)</strong> cho các service, tối ưu hóa image size và đảm bảo môi trường runtime an toàn, cô lập.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="text-neonCyan mt-1">▹</span>
+            <span class="text-red-500 mt-1">▹</span>
             <span>Viết các script tự động hóa hạ tầng và quy trình xử lý dữ liệu với <strong>Python</strong>, giảm thiểu thao tác thủ công và nguy cơ lỗi vận hành.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="text-neonCyan mt-1">▹</span>
+            <span class="text-red-500 mt-1">▹</span>
             <span>Vận hành và quản lý hệ quản trị cơ sở dữ liệu <strong>PostgreSQL</strong>; hỗ trợ index, backup, restore và giám sát hiệu năng truy vấn cho hệ thống.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="text-neonCyan mt-1">▹</span>
+            <span class="text-red-500 mt-1">▹</span>
             <span>Tích hợp và hỗ trợ triển khai các microservices/backend được phát triển bằng <strong>C# (.NET)</strong>, đảm bảo tính liên tục của hệ thống thương mại điện tử.</span>
           </li>
         </ul>
@@ -260,92 +270,92 @@
     <!-- SKILLS SECTION -->
     <section id="skills" class="py-20 border-t border-slate-800/80">
       <div class="flex items-center gap-3 mb-10">
-        <span class="font-orbitron text-neonCyan text-xl font-bold">03.</span>
-        <h2 class="font-orbitron text-2xl sm:text-3xl font-bold text-white tracking-wide">Kỹ Năng & Công Cụ</h2>
+        <span class="font-mono text-neonCyan text-sm font-semibold">03.</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">Kỹ Năng & Công Cụ</h2>
         <div class="h-[1px] flex-1 bg-slate-800 ml-4"></div>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Languages -->
         <div class="bg-slate-900/40 border border-slate-800 rounded-xl p-6 hover:border-slate-700 transition-all">
-          <div class="flex items-center gap-2 mb-4">
-            <i class="fa-solid fa-code text-neonCyan text-lg"></i>
-            <h3 class="font-orbitron text-base font-bold text-white">Ngôn Ngữ Lập Trình</h3>
+          <div class="flex items-center gap-2 mb-3">
+            <i class="fa-solid fa-code text-neonCyan"></i>
+            <h3 class="font-display text-base font-bold text-white">Ngôn Ngữ Lập Trình</h3>
           </div>
           <p class="text-slate-400 text-xs mb-4">Các ngôn ngữ đã học và ứng dụng trong dự án:</p>
           <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 bg-slate-800/90 rounded text-xs font-rajdhani font-semibold text-slate-200">Python</span>
-            <span class="px-2.5 py-1 bg-slate-800/90 rounded text-xs font-rajdhani font-semibold text-slate-200">Java</span>
-            <span class="px-2.5 py-1 bg-slate-800/90 rounded text-xs font-rajdhani font-semibold text-slate-200">C#</span>
-            <span class="px-2.5 py-1 bg-slate-800/90 rounded text-xs font-rajdhani font-semibold text-slate-200">JavaScript</span>
-            <span class="px-2.5 py-1 bg-slate-800/90 rounded text-xs font-rajdhani font-semibold text-slate-200">HTML5 / CSS3</span>
+            <span class="px-2.5 py-1 bg-slate-800/80 rounded text-xs font-mono text-slate-200">Python</span>
+            <span class="px-2.5 py-1 bg-slate-800/80 rounded text-xs font-mono text-slate-200">Java</span>
+            <span class="px-2.5 py-1 bg-slate-800/80 rounded text-xs font-mono text-slate-200">C#</span>
+            <span class="px-2.5 py-1 bg-slate-800/80 rounded text-xs font-mono text-slate-200">JavaScript</span>
+            <span class="px-2.5 py-1 bg-slate-800/80 rounded text-xs font-mono text-slate-200">HTML5 / CSS3</span>
           </div>
         </div>
 
         <!-- Databases -->
         <div class="bg-slate-900/40 border border-slate-800 rounded-xl p-6 hover:border-slate-700 transition-all">
-          <div class="flex items-center gap-2 mb-4">
-            <i class="fa-solid fa-database text-purple-400 text-lg"></i>
-            <h3 class="font-orbitron text-base font-bold text-white">Cơ Sở Dữ Liệu</h3>
+          <div class="flex items-center gap-2 mb-3">
+            <i class="fa-solid fa-database text-purple-400"></i>
+            <h3 class="font-display text-base font-bold text-white">Cơ Sở Dữ Liệu</h3>
           </div>
           <p class="text-slate-400 text-xs mb-4">Quản lý và truy vấn dữ liệu quan hệ & cloud:</p>
           <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 bg-slate-800/90 rounded text-xs font-rajdhani font-semibold text-slate-200">MySQL</span>
-            <span class="px-2.5 py-1 bg-slate-800/90 rounded text-xs font-rajdhani font-semibold text-slate-200">PostgreSQL</span>
-            <span class="px-2.5 py-1 bg-slate-800/90 rounded text-xs font-rajdhani font-semibold text-slate-200">SQL Server</span>
-            <span class="px-2.5 py-1 bg-slate-800/90 rounded text-xs font-rajdhani font-semibold text-slate-200">Supabase</span>
+            <span class="px-2.5 py-1 bg-slate-800/80 rounded text-xs font-mono text-slate-200">MySQL</span>
+            <span class="px-2.5 py-1 bg-slate-800/80 rounded text-xs font-mono text-slate-200">PostgreSQL</span>
+            <span class="px-2.5 py-1 bg-slate-800/80 rounded text-xs font-mono text-slate-200">SQL Server</span>
+            <span class="px-2.5 py-1 bg-slate-800/80 rounded text-xs font-mono text-slate-200">Supabase</span>
           </div>
         </div>
 
         <!-- DevOps & Tools -->
         <div class="bg-slate-900/40 border border-slate-800 rounded-xl p-6 hover:border-slate-700 transition-all">
-          <div class="flex items-center gap-2 mb-4">
-            <i class="fa-solid fa-screwdriver-wrench text-emerald-400 text-lg"></i>
-            <h3 class="font-orbitron text-base font-bold text-white">DevOps & Công Cụ</h3>
+          <div class="flex items-center gap-2 mb-3">
+            <i class="fa-solid fa-screwdriver-wrench text-emerald-400"></i>
+            <h3 class="font-display text-base font-bold text-white">DevOps & Công Cụ</h3>
           </div>
           <p class="text-slate-400 text-xs mb-4">Môi trường phát triển và vận hành hệ thống:</p>
           <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 bg-slate-800/90 rounded text-xs font-rajdhani font-semibold text-slate-200">Docker</span>
-            <span class="px-2.5 py-1 bg-slate-800/90 rounded text-xs font-rajdhani font-semibold text-slate-200">Git / GitHub</span>
-            <span class="px-2.5 py-1 bg-slate-800/90 rounded text-xs font-rajdhani font-semibold text-slate-200">Postman</span>
-            <span class="px-2.5 py-1 bg-slate-800/90 rounded text-xs font-rajdhani font-semibold text-slate-200">VS Code</span>
-            <span class="px-2.5 py-1 bg-slate-800/90 rounded text-xs font-rajdhani font-semibold text-slate-200">Visual Studio</span>
+            <span class="px-2.5 py-1 bg-slate-800/80 rounded text-xs font-mono text-slate-200">Docker</span>
+            <span class="px-2.5 py-1 bg-slate-800/80 rounded text-xs font-mono text-slate-200">Git / GitHub</span>
+            <span class="px-2.5 py-1 bg-slate-800/80 rounded text-xs font-mono text-slate-200">Postman</span>
+            <span class="px-2.5 py-1 bg-slate-800/80 rounded text-xs font-mono text-slate-200">VS Code</span>
+            <span class="px-2.5 py-1 bg-slate-800/80 rounded text-xs font-mono text-slate-200">Visual Studio</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS SECTION (SKELETON / BLUEPRINT CARDS) -->
+    <!-- PROJECTS SECTION (BLUEPRINT / SKELETON CARDS) -->
     <section id="projects" class="py-20 border-t border-slate-800/80">
-      <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center justify-between mb-3">
         <div class="flex items-center gap-3">
-          <span class="font-orbitron text-neonCyan text-xl font-bold">04.</span>
-          <h2 class="font-orbitron text-2xl sm:text-3xl font-bold text-white tracking-wide">Dự Án</h2>
+          <span class="font-mono text-neonCyan text-sm font-semibold">04.</span>
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">Dự Án</h2>
           <div class="h-[1px] w-24 sm:w-48 bg-slate-800 ml-4 hidden sm:block"></div>
         </div>
       </div>
       <p class="text-slate-400 text-sm mb-10 max-w-xl">
-        Các dự án đang trong giai đoạn kiến trúc và hoàn thiện. Khung bên dưới đã được thiết kế sẵn sàng để cập nhật thông tin khi sẵn sàng công bố.
+        Các dự án đang trong giai đoạn kiến trúc và hoàn thiện. Khung bên dưới đã được thiết kế sẵn sàng để điền thông tin chi tiết.
       </p>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Card 1 (Blueprint) -->
+        <!-- Blueprint Card 1 -->
         <div class="group bg-slate-900/40 border border-slate-800 hover:border-neonCyan/50 rounded-xl p-6 flex flex-col justify-between transition-all duration-300 relative overflow-hidden">
           <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2 w-16 h-16 bg-neonCyan/5 rounded-full blur-xl group-hover:bg-neonCyan/20 transition-all"></div>
           
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="font-rajdhani text-xs font-bold text-amber-400 bg-amber-400/10 border border-amber-400/30 px-2 py-0.5 rounded">
-                [ ⚡ ARCHITECTING ]
+              <span class="font-mono text-xs font-semibold text-amber-400 bg-amber-400/10 border border-amber-400/30 px-2 py-0.5 rounded">
+                // ARCHITECTING
               </span>
               <div class="flex gap-3 text-slate-500">
-                <i class="fa-brands fa-github text-lg"></i>
-                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                <i class="fa-brands fa-github text-base"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
               </div>
             </div>
 
-            <h3 class="font-orbitron text-lg font-bold text-white group-hover:text-neonCyan transition-colors mb-2">
+            <h3 class="font-display text-lg font-bold text-white group-hover:text-neonCyan transition-colors mb-2">
               Automated CI/CD & Deploy Engine
             </h3>
             <p class="text-slate-400 text-sm leading-relaxed mb-6">
@@ -354,7 +364,7 @@
           </div>
 
           <div>
-            <div class="flex flex-wrap gap-2 font-rajdhani text-xs font-bold text-slate-400">
+            <div class="flex flex-wrap gap-2 font-mono text-xs text-slate-400">
               <span>Docker</span>
               <span>•</span>
               <span>Python</span>
@@ -364,22 +374,22 @@
           </div>
         </div>
 
-        <!-- Card 2 (Blueprint) -->
+        <!-- Blueprint Card 2 -->
         <div class="group bg-slate-900/40 border border-slate-800 hover:border-purple-500/50 rounded-xl p-6 flex flex-col justify-between transition-all duration-300 relative overflow-hidden">
           <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2 w-16 h-16 bg-purple-500/5 rounded-full blur-xl group-hover:bg-purple-500/20 transition-all"></div>
 
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="font-rajdhani text-xs font-bold text-purple-400 bg-purple-400/10 border border-purple-400/30 px-2 py-0.5 rounded">
-                [ 🛠️ IN DEVELOPMENT ]
+              <span class="font-mono text-xs font-semibold text-purple-400 bg-purple-400/10 border border-purple-400/30 px-2 py-0.5 rounded">
+                // IN DEVELOPMENT
               </span>
               <div class="flex gap-3 text-slate-500">
-                <i class="fa-brands fa-github text-lg"></i>
-                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                <i class="fa-brands fa-github text-base"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
               </div>
             </div>
 
-            <h3 class="font-orbitron text-lg font-bold text-white group-hover:text-purple-400 transition-colors mb-2">
+            <h3 class="font-display text-lg font-bold text-white group-hover:text-purple-400 transition-colors mb-2">
               E-Commerce Microservices Core
             </h3>
             <p class="text-slate-400 text-sm leading-relaxed mb-6">
@@ -388,7 +398,7 @@
           </div>
 
           <div>
-            <div class="flex flex-wrap gap-2 font-rajdhani text-xs font-bold text-slate-400">
+            <div class="flex flex-wrap gap-2 font-mono text-xs text-slate-400">
               <span>C#</span>
               <span>•</span>
               <span>PostgreSQL</span>
@@ -398,22 +408,22 @@
           </div>
         </div>
 
-        <!-- Card 3 (Blueprint) -->
+        <!-- Blueprint Card 3 -->
         <div class="group bg-slate-900/40 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-6 flex flex-col justify-between transition-all duration-300 relative overflow-hidden">
           <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2 w-16 h-16 bg-emerald-500/5 rounded-full blur-xl group-hover:bg-emerald-500/20 transition-all"></div>
 
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="font-rajdhani text-xs font-bold text-emerald-400 bg-emerald-400/10 border border-emerald-400/30 px-2 py-0.5 rounded">
-                [ 📋 SYSTEM PROTOTYPE ]
+              <span class="font-mono text-xs font-semibold text-emerald-400 bg-emerald-400/10 border border-emerald-400/30 px-2 py-0.5 rounded">
+                // PROTOTYPE
               </span>
               <div class="flex gap-3 text-slate-500">
-                <i class="fa-brands fa-github text-lg"></i>
-                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                <i class="fa-brands fa-github text-base"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
               </div>
             </div>
 
-            <h3 class="font-orbitron text-lg font-bold text-white group-hover:text-emerald-400 transition-colors mb-2">
+            <h3 class="font-display text-lg font-bold text-white group-hover:text-emerald-400 transition-colors mb-2">
               Database Migration & Sync Utility
             </h3>
             <p class="text-slate-400 text-sm leading-relaxed mb-6">
@@ -422,7 +432,7 @@
           </div>
 
           <div>
-            <div class="flex flex-wrap gap-2 font-rajdhani text-xs font-bold text-slate-400">
+            <div class="flex flex-wrap gap-2 font-mono text-xs text-slate-400">
               <span>Python</span>
               <span>•</span>
               <span>MySQL</span>
@@ -437,38 +447,38 @@
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="py-24 border-t border-slate-800/80 text-center">
-      <span class="font-orbitron text-neonCyan text-sm font-bold tracking-widest uppercase mb-3 inline-block">
+      <span class="font-mono text-neonCyan text-xs font-semibold tracking-wider uppercase mb-3 inline-block">
         05. What's Next?
       </span>
-      <h2 class="font-orbitron text-3xl sm:text-5xl font-black text-white mb-6">
+      <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">
         Liên Hệ Với Tôi
       </h2>
-      <p class="max-w-xl mx-auto text-slate-400 text-base sm:text-lg mb-8 leading-relaxed">
-        Tôi luôn sẵn sàng trao đổi về các cơ hội hợp tác, dự án DevOps/Backend hoặc thảo luận về giải pháp hệ thống.
+      <p class="max-w-xl mx-auto text-slate-400 text-base mb-8 leading-relaxed">
+        Tôi luôn sẵn sàng trao đổi về các cơ hội hợp tác, dự án DevOps/Backend hoặc thảo luận về giải pháp hạ tầng.
       </p>
 
-      <!-- Email Card with 1-Click Copy -->
+      <!-- Email 1-Click Copy -->
       <div class="inline-flex flex-col sm:flex-row items-center gap-3 bg-slate-900 border border-slate-800 rounded-xl p-3 sm:px-6 sm:py-3 mb-10 glow-cyan-hover transition-all">
-        <i class="fa-regular fa-envelope text-neonCyan text-xl"></i>
-        <span id="emailText" class="font-rajdhani font-bold text-xl text-white select-all">phuhn1080@gmail.com</span>
+        <i class="fa-regular fa-envelope text-neonCyan text-lg"></i>
+        <span id="emailText" class="font-mono font-medium text-lg text-white select-all">phuhn1080@gmail.com</span>
         <button id="copyBtn" onclick="copyEmail()" 
-                class="px-3 py-1.5 rounded-md bg-slate-800 hover:bg-neonCyan hover:text-black transition-all text-xs font-rajdhani font-bold text-slate-300">
+                class="px-3 py-1.5 rounded-md bg-slate-800 hover:bg-neonCyan hover:text-black transition-all text-xs font-mono font-semibold text-slate-300">
           <i class="fa-regular fa-copy mr-1"></i> <span id="copyLabel">COPY</span>
         </button>
       </div>
 
-      <!-- Social Links -->
-      <div class="flex justify-center items-center gap-6">
+      <!-- Socials -->
+      <div class="flex justify-center items-center gap-5">
         <a href="https://github.com/TheTLV" target="_blank" rel="noopener noreferrer"
-           class="w-12 h-12 rounded-full border border-slate-800 bg-slate-900/60 flex items-center justify-center text-slate-400 hover:text-neonCyan hover:border-neonCyan transition-all text-xl">
+           class="w-11 h-11 rounded-lg border border-slate-800 bg-slate-900/60 flex items-center justify-center text-slate-400 hover:text-neonCyan hover:border-neonCyan transition-all text-lg">
           <i class="fa-brands fa-github"></i>
         </a>
         <a href="https://www.facebook.com/susan1080" target="_blank" rel="noopener noreferrer"
-           class="w-12 h-12 rounded-full border border-slate-800 bg-slate-900/60 flex items-center justify-center text-slate-400 hover:text-blue-500 hover:border-blue-500 transition-all text-xl">
+           class="w-11 h-11 rounded-lg border border-slate-800 bg-slate-900/60 flex items-center justify-center text-slate-400 hover:text-blue-500 hover:border-blue-500 transition-all text-lg">
           <i class="fa-brands fa-facebook"></i>
         </a>
         <a href="mailto:phuhn1080@gmail.com"
-           class="w-12 h-12 rounded-full border border-slate-800 bg-slate-900/60 flex items-center justify-center text-slate-400 hover:text-red-400 hover:border-red-400 transition-all text-xl">
+           class="w-11 h-11 rounded-lg border border-slate-800 bg-slate-900/60 flex items-center justify-center text-slate-400 hover:text-red-400 hover:border-red-400 transition-all text-lg">
           <i class="fa-solid fa-envelope"></i>
         </a>
       </div>
@@ -477,9 +487,9 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="border-t border-slate-800/80 py-8 bg-[#06080e] text-center">
-    <p class="font-rajdhani text-slate-500 text-sm">
-      Designed & Built by <span class="text-slate-300 font-bold">TheTLV</span> • Inspired by modern engineering portfolios
+  <footer class="border-t border-slate-800/80 py-8 bg-[#070a10] text-center">
+    <p class="font-mono text-slate-500 text-xs">
+      Designed & Built by <span class="text-slate-300 font-semibold">TheTLV</span>
     </p>
   </footer>
 
@@ -497,4 +507,3 @@
   </script>
 </body>
 </html>
-
