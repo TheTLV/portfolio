@@ -1,497 +1,527 @@
 <!DOCTYPE html>
-<html lang="vi" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <title>TheTLV | DevOps & Software Engineer</title>
-  
-  <!-- Favicon -->
+  <title>Hoang Ngoc Phu (TheTLV) | DevOps Engineer</title>
+  <meta name="description" content="Hoang Ngoc Phu (TheTLV), early-career DevOps engineer at Sendo. Containers, automation, databases and the side projects I build to learn." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hoang Ngoc Phu (TheTLV) | DevOps Engineer" />
+  <meta property="og:description" content="Early-career DevOps engineer at Sendo. Containers, automation, databases and the side projects I build to learn." />
+  <meta property="og:url" content="https://thetlv.github.io/portfolio/" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
-  <!-- Modern Tech Fonts with Full Vietnamese Support -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            sendoRed: '#E5101E',
-          },
-          fontFamily: {
-            display: ['Space Grotesk', 'sans-serif'],
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          }
-        }
-      }
-    }
-  </script>
-
   <style>
-    /* Clean Minimalist White Grid Background */
+    :root {
+      --bg: #ffffff;
+      --surface: #fafafa;
+      --line: #e4e4e7;
+      --line-strong: #a1a1aa;
+      --text: #18181b;
+      --muted: #52525b;
+      --faint: #71717a;
+      --accent: #E5101E;
+      --ok: #059669;
+      --term-bg: #18181b;
+      --display: 'Space Grotesk', sans-serif;
+      --sans: 'Plus Jakarta Sans', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
     body {
-      background-color: #ffffff;
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.03) 0%, transparent 60%),
-        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-      background-size: 100% 100%, 40px 40px, 40px 40px;
-      color: #18181b;
-      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      font-family: var(--sans);
+      color: var(--text);
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(rgba(0,0,0,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: #000; color: #fff; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+    .mono { font-family: var(--mono); }
 
-    /* Minimalist Scrollbar */
-    ::-webkit-scrollbar {
-      width: 7px;
+    /* NAV */
+    header {
+      position: fixed; inset: 0 0 auto 0; z-index: 50;
+      background: rgba(255,255,255,.88); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
     }
-    ::-webkit-scrollbar-track {
-      background: #f4f4f5;
+    .nav { height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 18px; }
+    .brand img { width: 32px; height: 32px; border-radius: 8px; }
+    .brand span { color: var(--line-strong); }
+    .links { display: flex; gap: 28px; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+    .links a { color: var(--muted); transition: color .2s; }
+    .links a:hover { color: #000; }
+    .links a b { color: var(--faint); font-weight: 400; margin-right: 6px; }
+    .menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: 8px; width: 40px; height: 40px; font-size: 16px; cursor: pointer; color: var(--text); }
+
+    /* BUTTONS */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 15px; transition: all .2s; border: 1px solid transparent; }
+    .btn-dark { background: var(--text); color: #fff; }
+    .btn-dark:hover { background: #000; transform: translateY(-1px); }
+    .btn-line { border-color: #d4d4d8; background: #fff; color: var(--text); }
+    .btn-line:hover { border-color: var(--text); transform: translateY(-1px); }
+
+    /* HERO */
+    .hero { min-height: 92vh; padding-top: 110px; padding-bottom: 60px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+    .status { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 999px; border: 1px solid #a7f3d0; background: #ecfdf5; color: #047857; font-family: var(--mono); font-size: 12px; font-weight: 600; margin-bottom: 22px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #10b981; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(16,185,129,.5); } 50% { box-shadow: 0 0 0 6px rgba(16,185,129,0); } }
+    .hello { font-family: var(--mono); color: var(--faint); font-size: 14px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; }
+    h1 { font-family: var(--display); font-size: clamp(42px, 7vw, 76px); line-height: 1.02; letter-spacing: -.03em; margin: 10px 0 14px; }
+    h1 span { color: var(--line-strong); }
+    .role { font-family: var(--display); font-size: clamp(20px, 3vw, 28px); font-weight: 600; color: var(--muted); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+    .role a img { height: 30px; display: block; transition: transform .2s; }
+    .role a:hover img { transform: scale(1.06); }
+    .lead { max-width: 560px; color: var(--muted); font-size: 17px; margin-bottom: 30px; }
+    .lead strong { color: var(--text); }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    /* TERMINAL */
+    .term { background: var(--term-bg); border-radius: 14px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.35); overflow: hidden; font-family: var(--mono); font-size: 13.5px; }
+    .term-bar { display: flex; align-items: center; gap: 7px; padding: 12px 14px; background: #27272a; }
+    .term-bar i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+    .term-bar p { color: #a1a1aa; font-size: 12px; margin-left: 10px; }
+    .term-body { padding: 18px 18px 22px; min-height: 290px; color: #e4e4e7; white-space: pre-wrap; word-break: break-word; }
+    .term-body .p { color: #34d399; }
+    .term-body .o { color: #a1a1aa; }
+    .term-body .g { color: #34d399; }
+    .caret { display: inline-block; width: 8px; height: 16px; background: #e4e4e7; vertical-align: -3px; animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* SECTIONS */
+    section.block { padding: 88px 0; border-top: 1px solid var(--line); }
+    .head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .head b { font-family: var(--mono); font-size: 14px; }
+    .head h2 { font-family: var(--display); font-size: clamp(26px, 4vw, 34px); letter-spacing: -.02em; }
+    .head::after { content: ""; flex: 1; height: 1px; background: var(--line); margin-left: 12px; }
+    .intro { color: var(--muted); max-width: 640px; margin-bottom: 40px; }
+
+    .card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 26px; transition: border-color .25s, box-shadow .25s, transform .25s; }
+    .card:hover { border-color: var(--line-strong); box-shadow: 0 14px 30px -18px rgba(0,0,0,.25); transform: translateY(-3px); }
+
+    /* ABOUT */
+    .about { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; align-items: start; }
+    .about p { color: var(--muted); margin-bottom: 14px; font-size: 16px; }
+    .about p strong { color: var(--text); }
+    .facts { background: var(--surface); }
+    .facts h3 { font-family: var(--mono); font-size: 12px; color: var(--faint); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; font-weight: 600; }
+    .facts li { list-style: none; display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .facts li:last-child { border: 0; }
+    .facts li span:first-child { color: var(--faint); }
+    .facts li span:last-child { font-weight: 600; text-align: right; }
+
+    /* EXPERIENCE */
+    .job { border-left: 3px solid var(--accent); }
+    .job-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+    .job-who { display: flex; align-items: center; gap: 16px; }
+    .job-logo { display: flex; align-items: center; justify-content: center; width: 110px; height: 56px; border: 1px solid var(--line); border-radius: 12px; padding: 10px; background: #fff; transition: border-color .2s, transform .2s; }
+    .job-logo:hover { border-color: var(--accent); transform: scale(1.04); }
+    .job-logo img { width: 100%; height: 100%; object-fit: contain; }
+    .job h3 { font-family: var(--display); font-size: 22px; }
+    .job .sub { color: var(--faint); font-size: 14px; }
+    .tag { font-family: var(--mono); font-size: 12px; padding: 4px 10px; border-radius: 6px; background: #f4f4f5; border: 1px solid var(--line); color: #3f3f46; display: inline-flex; align-items: center; gap: 6px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .job ul { margin-top: 20px; display: grid; gap: 10px; }
+    .job li { list-style: none; display: flex; gap: 12px; color: #3f3f46; font-size: 15px; }
+    .job li::before { content: "▹"; color: var(--accent); font-weight: 700; }
+
+    /* PROJECTS */
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .proj { display: flex; flex-direction: column; }
+    .proj-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+    .kind { font-family: var(--mono); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--faint); }
+    .proj-links { display: flex; gap: 12px; }
+    .proj-links a { color: var(--faint); font-size: 16px; transition: color .2s; }
+    .proj-links a:hover { color: #000; }
+    .proj h3 { font-family: var(--display); font-size: 19px; margin-bottom: 8px; }
+    .proj p { color: var(--muted); font-size: 14.5px; flex: 1; margin-bottom: 18px; }
+    .stack { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+
+    /* ROADMAP */
+    .road { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .road h3 { font-family: var(--display); font-size: 18px; display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .road .note { color: var(--faint); font-size: 13.5px; margin-bottom: 16px; }
+    .pill { width: 10px; height: 10px; border-radius: 50%; }
+    .bar { height: 4px; border-radius: 4px; background: #f4f4f5; margin-top: 18px; overflow: hidden; }
+    .bar i { display: block; height: 100%; width: 0; border-radius: 4px; transition: width 1.2s cubic-bezier(.2,.8,.2,1); }
+    .in .bar i { width: var(--w); }
+
+    /* CONTACT */
+    .contact { text-align: center; }
+    .contact h2 { font-family: var(--display); font-size: clamp(32px, 5vw, 48px); letter-spacing: -.02em; margin: 8px 0 14px; }
+    .contact p { color: var(--muted); max-width: 540px; margin: 0 auto 30px; }
+    .mail { display: inline-flex; align-items: center; gap: 14px; flex-wrap: wrap; justify-content: center; border: 1px solid #d4d4d8; border-radius: 12px; padding: 12px 18px; background: var(--surface); margin-bottom: 30px; }
+    .mail span { font-family: var(--mono); font-size: 17px; }
+    .mail button { font-family: var(--mono); font-size: 12px; font-weight: 600; background: var(--text); color: #fff; border: 0; border-radius: 7px; padding: 7px 12px; cursor: pointer; }
+    .socials { display: flex; justify-content: center; gap: 14px; }
+    .socials a { width: 48px; height: 48px; border: 1px solid var(--line); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #3f3f46; background: #fff; transition: all .2s; }
+    .socials a:hover { transform: translateY(-3px); border-color: var(--text); color: #000; }
+
+    footer { border-top: 1px solid var(--line); padding: 28px 0; text-align: center; font-family: var(--mono); font-size: 12px; color: var(--faint); background: var(--surface); }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 104px; }
+      .about { grid-template-columns: 1fr; }
+      .grid3, .road { grid-template-columns: 1fr 1fr; }
     }
-    ::-webkit-scrollbar-thumb {
-      background: #d4d4d8;
-      border-radius: 4px;
+    @media (max-width: 760px) {
+      .menu-btn { display: block; }
+      .links { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; gap: 0; background: #fff; border-bottom: 1px solid var(--line); padding: 8px 20px; }
+      .links.open { display: flex; }
+      .links a { padding: 14px 0; border-bottom: 1px solid var(--line); }
+      .links a:last-child { border: 0; }
+      .grid3, .road { grid-template-columns: 1fr; }
+      section.block { padding: 64px 0; }
+      .term-body { min-height: 250px; font-size: 12.5px; }
     }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #a1a1aa;
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+      .bar i { width: var(--w); }
     }
   </style>
 </head>
-<body class="font-sans antialiased selection:bg-black selection:text-white">
+<body>
 
-  <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-md border-b border-zinc-200">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <a href="#hero" class="flex items-center gap-2.5 group">
-        <img src="assets/favicon.svg" alt="TheTLV Logo" class="w-8 h-8 rounded-lg shadow-sm group-hover:scale-105 transition-transform" />
-        <span class="font-display font-bold text-lg tracking-tight text-zinc-900 group-hover:text-zinc-600 transition-colors">
-          TheTLV<span class="text-zinc-400">.</span>
-        </span>
-      </a>
-
-      <nav class="hidden md:flex items-center gap-8 font-mono text-xs tracking-wider uppercase">
-        <a href="#about" class="text-zinc-600 hover:text-black transition-colors"><span class="text-zinc-400 mr-1.5">01.</span>About</a>
-        <a href="#experience" class="text-zinc-600 hover:text-black transition-colors"><span class="text-zinc-400 mr-1.5">02.</span>Experience</a>
-        <a href="#skills" class="text-zinc-600 hover:text-black transition-colors"><span class="text-zinc-400 mr-1.5">03.</span>Skills</a>
-        <a href="#projects" class="text-zinc-600 hover:text-black transition-colors"><span class="text-zinc-400 mr-1.5">04.</span>Projects</a>
-        <a href="#contact" class="text-zinc-600 hover:text-black transition-colors"><span class="text-zinc-400 mr-1.5">05.</span>Contact</a>
+  <header>
+    <div class="wrap nav">
+      <a href="#top" class="brand"><img src="assets/favicon.svg" alt="" /><b>TheTLV<span>.</span></b></a>
+      <nav class="links" id="links">
+        <a href="#about"><b>01.</b>About</a>
+        <a href="#work"><b>02.</b>Work</a>
+        <a href="#projects"><b>03.</b>Projects</a>
+        <a href="#learning"><b>04.</b>Learning</a>
+        <a href="#contact"><b>05.</b>Contact</a>
       </nav>
-
-      <div class="flex items-center gap-3">
-        <a href="https://github.com/TheTLV" target="_blank" rel="noopener noreferrer"
-           class="px-3.5 py-1.5 rounded-lg border border-zinc-300 bg-zinc-50 hover:bg-black hover:text-white hover:border-black text-zinc-800 transition-all text-xs font-mono font-medium flex items-center gap-2 shadow-sm">
-          <i class="fa-brands fa-github text-sm"></i>
-          <span>GitHub</span>
-        </a>
-      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-20">
+  <main class="wrap" id="top">
 
-    <!-- HERO SECTION -->
-    <section id="hero" class="min-h-[78vh] flex flex-col justify-center">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 text-xs font-mono font-semibold tracking-wide mb-6 w-fit shadow-xs">
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span>Open to Opportunities & Infrastructure Challenges</span>
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="status"><span class="dot"></span>Open to opportunities</div>
+        <p class="hello">Hi, I'm</p>
+        <h1>Hoang Ngoc Phu<span>.</span></h1>
+        <div class="role">
+          DevOps Engineer at
+          <a href="https://www.sendo.vn/" target="_blank" rel="noopener noreferrer" title="Sendo" aria-label="Sendo website">
+            <img src="assets/sendo-wordmark.svg" alt="Sendo" />
+          </a>
+        </div>
+        <p class="lead">
+          I'm early in my career. At work I run services in <strong>Docker</strong>, write
+          <strong>Python</strong> automation and look after <strong>PostgreSQL</strong>.
+          Outside work I build small apps and games to learn how software gets built, packaged and shipped.
+        </p>
+        <div class="cta">
+          <a href="#projects" class="btn btn-dark">See what I've built <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="https://github.com/TheTLV" target="_blank" rel="noopener noreferrer" class="btn btn-line"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
       </div>
 
-      <p class="font-mono text-zinc-500 text-sm sm:text-base font-semibold tracking-wider uppercase mb-3">
-        Xin chào, tôi là
-      </p>
-      <h1 class="font-display font-extrabold text-5xl sm:text-7xl lg:text-8xl text-zinc-950 tracking-tight my-2">
-        TheTLV<span class="text-zinc-400">.</span>
-      </h1>
-      <h2 class="font-display font-bold text-2xl sm:text-4xl text-zinc-600 tracking-tight mb-6">
-        DevOps & Software Engineer
-      </h2>
-
-      <p class="max-w-2xl text-zinc-600 text-base sm:text-lg leading-relaxed mb-8">
-        Kỹ sư phần mềm tập trung vào tối ưu hóa hạ tầng, container hóa hệ thống với <strong class="text-zinc-900 font-semibold">Docker</strong>, tự động hóa quy trình với <strong class="text-zinc-900 font-semibold">Python</strong>, cùng các giải pháp backend và cơ sở dữ liệu đáng tin cậy.
-      </p>
-
-      <div class="flex flex-wrap items-center gap-4">
-        <!-- Main Button (Black on White Theme) -->
-        <a href="#experience" 
-           class="px-6 py-3 rounded-lg bg-zinc-900 text-white font-semibold text-sm sm:text-base hover:bg-zinc-800 transition-all flex items-center gap-2 shadow-md shadow-zinc-900/10">
-          <span>Xem kinh nghiệm</span>
-          <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-        <a href="#projects" 
-           class="px-6 py-3 rounded-lg border border-zinc-300 bg-white hover:border-zinc-500 hover:text-black text-zinc-700 transition-all font-semibold text-sm sm:text-base shadow-xs">
-          Dự án & Kiến trúc
-        </a>
-        <a href="#contact" 
-           class="px-6 py-3 rounded-lg text-zinc-600 hover:text-black transition-all font-semibold text-sm sm:text-base flex items-center gap-2">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Liên hệ</span>
-        </a>
+      <div class="term" aria-hidden="true">
+        <div class="term-bar">
+          <i style="background:#ef4444"></i><i style="background:#f59e0b"></i><i style="background:#22c55e"></i>
+          <p>phu@thetlv: ~</p>
+        </div>
+        <div class="term-body" id="term"></div>
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="py-20 border-t border-zinc-200">
-      <div class="flex items-center gap-3 mb-10">
-        <span class="font-mono text-zinc-900 font-bold text-sm">01.</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-bold text-zinc-900 tracking-tight">Về Tôi</h2>
-        <div class="h-[1px] flex-1 bg-zinc-200 ml-4"></div>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8 items-start">
-        <div class="md:col-span-2 space-y-4 text-zinc-600 leading-relaxed text-base">
+    <!-- ABOUT -->
+    <section class="block" id="about">
+      <div class="head reveal"><b>01.</b><h2>About me</h2></div>
+      <div class="about">
+        <div class="reveal">
           <p>
-            Tôi là một kỹ sư phần mềm với định hướng chuyên sâu về <span class="text-zinc-900 font-semibold">DevOps</span> và <span class="text-zinc-900 font-semibold">Kiến trúc Hệ thống</span>. Mục tiêu hàng đầu của tôi là xây dựng quy trình triển khai tự động hóa mượt mà, loại bỏ các thao tác thủ công và đảm bảo các dịch vụ hoạt động với độ ổn định cao nhất.
+            I'm a software engineer from Vietnam working toward <strong>DevOps</strong>. My day job is at
+            <strong>Sendo</strong>, where I work with containers, automation scripts and databases.
           </p>
           <p>
-            Trong công việc, tôi trực tiếp làm việc với công nghệ container hóa <span class="text-zinc-900 font-semibold">Docker</span>, lập trình script tự động hóa với <span class="text-zinc-900 font-semibold">Python</span>, phát triển & tích hợp dịch vụ backend bằng <span class="text-zinc-900 font-semibold">C#</span> và quản trị cơ sở dữ liệu <span class="text-zinc-900 font-semibold">PostgreSQL</span>.
+            I don't have a big flagship project yet. What I do have is a habit of building things end to end:
+            a learning app with packaged Linux and Windows releases, a backend for a university grading system,
+            a video pipeline that runs in Docker, and a couple of Unity games.
           </p>
           <p>
-            Phong cách làm việc của tôi hướng tới sự chắc chắn, trung thực và tối ưu hiệu quả lâu dài thay vì sự rườm rà.
+            I care about doing things properly over doing them fast, and I'm open about what I still need to learn.
+            The <a href="#learning" style="text-decoration:underline">learning roadmap</a> below shows where I am.
           </p>
         </div>
-
-        <!-- Quick Summary Box -->
-        <div class="bg-zinc-50 border border-zinc-200 rounded-xl p-6 shadow-xs">
-          <h3 class="font-mono text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-4">// Quick Snapshot</h3>
-          <ul class="space-y-3 font-sans text-sm">
-            <li class="flex items-center justify-between border-b border-zinc-200 pb-2">
-              <span class="text-zinc-500">Chuyên môn</span>
-              <span class="text-zinc-900 font-semibold">DevOps / Software Eng</span>
-            </li>
-            <li class="flex items-center justify-between border-b border-zinc-200 pb-2">
-              <span class="text-zinc-500">Kinh nghiệm</span>
-              <span class="text-zinc-900 font-semibold">DevOps @ Sendo</span>
-            </li>
-            <li class="flex items-center justify-between border-b border-zinc-200 pb-2">
-              <span class="text-zinc-500">Khu vực</span>
-              <span class="text-zinc-900 font-semibold">Việt Nam</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-zinc-500">Trạng thái</span>
-              <span class="text-emerald-700 font-semibold flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Sẵn sàng cộng tác
-              </span>
-            </li>
+        <div class="card facts reveal">
+          <h3>// Quick facts</h3>
+          <ul>
+            <li><span>Role</span><span>DevOps Engineer</span></li>
+            <li><span>Company</span><span>Sendo</span></li>
+            <li><span>Based in</span><span>Vietnam</span></li>
+            <li><span>Main stack</span><span>Docker · Python · .NET</span></li>
+            <li><span>Status</span><span style="color:var(--ok)">Learning &amp; open to work</span></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE SECTION -->
-    <section id="experience" class="py-20 border-t border-zinc-200">
-      <div class="flex items-center gap-3 mb-10">
-        <span class="font-mono text-zinc-900 font-bold text-sm">02.</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-bold text-zinc-900 tracking-tight">Kinh Nghiệm Làm Việc</h2>
-        <div class="h-[1px] flex-1 bg-zinc-200 ml-4"></div>
-      </div>
-
-      <!-- Experience Card: Sendo -->
-      <div class="relative bg-white border border-zinc-200 rounded-xl p-6 sm:p-8 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/5 transition-all duration-300">
-        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
-          <div class="flex items-start gap-4">
-            <!-- Official Sendo Logo -->
-            <div class="w-14 h-14 rounded-xl bg-zinc-50 p-2 flex items-center justify-center shrink-0 border border-zinc-200 shadow-xs">
-              <img src="assets/sendo-logo.svg" alt="Sendo Official Logo" class="w-full h-full object-contain" />
-            </div>
-
+    <!-- WORK -->
+    <section class="block" id="work">
+      <div class="head reveal"><b>02.</b><h2>Work</h2></div>
+      <div class="card job reveal">
+        <div class="job-top">
+          <div class="job-who">
+            <a class="job-logo" href="https://www.sendo.vn/" target="_blank" rel="noopener noreferrer" title="Sendo" aria-label="Sendo website">
+              <img src="assets/sendo-wordmark.svg" alt="Sendo" />
+            </a>
             <div>
-              <div class="flex items-center gap-2 mb-1">
-                <span class="font-display text-xl sm:text-2xl font-bold text-zinc-900">
-                  DevOps Engineer
-                </span>
-                <span class="text-[#E5101E] font-bold text-lg">@ Sendo</span>
-              </div>
-              <p class="text-zinc-500 text-xs sm:text-sm font-medium">
-                Công ty Cổ phần Công nghệ Sen Đỏ (FPT Group) • Sàn Thương mại Điện tử
-              </p>
+              <h3>DevOps Engineer</h3>
+              <p class="sub">Sendo (FPT Group) · E-commerce platform</p>
             </div>
           </div>
-
-          <span class="font-mono text-xs font-semibold text-zinc-700 bg-zinc-100 px-3 py-1.5 rounded-md border border-zinc-200 self-start">
-            Hiện tại
-          </span>
+          <span class="tag">Present</span>
         </div>
-
-        <!-- Tech Stack Badges -->
-        <div class="flex flex-wrap gap-2 mb-6">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-zinc-100 border border-zinc-200 rounded-md text-xs font-mono font-medium text-zinc-800">
-            <i class="fa-brands fa-docker text-zinc-600"></i> Docker
-          </span>
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-zinc-100 border border-zinc-200 rounded-md text-xs font-mono font-medium text-zinc-800">
-            <i class="fa-solid fa-code text-zinc-600"></i> C#
-          </span>
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-zinc-100 border border-zinc-200 rounded-md text-xs font-mono font-medium text-zinc-800">
-            <i class="fa-brands fa-python text-zinc-600"></i> Python
-          </span>
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-zinc-100 border border-zinc-200 rounded-md text-xs font-mono font-medium text-zinc-800">
-            <i class="fa-solid fa-database text-zinc-600"></i> PostgreSQL
-          </span>
+        <div class="tags">
+          <span class="tag"><i class="fa-brands fa-docker"></i> Docker</span>
+          <span class="tag"><i class="fa-brands fa-python"></i> Python</span>
+          <span class="tag"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+          <span class="tag"><i class="fa-solid fa-code"></i> C# / .NET</span>
         </div>
-
-        <!-- Responsibilities -->
-        <ul class="space-y-3 text-zinc-700 text-sm leading-relaxed">
-          <li class="flex items-start gap-3">
-            <span class="text-red-600 mt-1 font-bold">▹</span>
-            <span>Triển khai và chuẩn hóa giải pháp <strong>container hóa (Docker)</strong> cho các service, tối ưu hóa image size và đảm bảo môi trường runtime an toàn, cô lập.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-red-600 mt-1 font-bold">▹</span>
-            <span>Viết các script tự động hóa hạ tầng và quy trình xử lý dữ liệu với <strong>Python</strong>, giảm thiểu thao tác thủ công và nguy cơ lỗi vận hành.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-red-600 mt-1 font-bold">▹</span>
-            <span>Vận hành và quản lý hệ quản trị cơ sở dữ liệu <strong>PostgreSQL</strong>; hỗ trợ index, backup, restore và giám sát hiệu năng truy vấn cho hệ thống.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-red-600 mt-1 font-bold">▹</span>
-            <span>Tích hợp và hỗ trợ triển khai các microservices/backend được phát triển bằng <strong>C# (.NET)</strong>, đảm bảo tính liên tục của hệ thống thương mại điện tử.</span>
-          </li>
+        <ul>
+          <li>Package and run services in Docker containers, keeping images small and environments consistent.</li>
+          <li>Write Python scripts that automate routine infrastructure and data tasks, cutting down manual steps.</li>
+          <li>Help operate PostgreSQL: indexes, backups, restores and watching query performance.</li>
+          <li>Support deployments of backend services written in C# (.NET).</li>
         </ul>
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section id="skills" class="py-20 border-t border-zinc-200">
-      <div class="flex items-center gap-3 mb-10">
-        <span class="font-mono text-zinc-900 font-bold text-sm">03.</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-bold text-zinc-900 tracking-tight">Kỹ Năng & Công Cụ</h2>
-        <div class="h-[1px] flex-1 bg-zinc-200 ml-4"></div>
-      </div>
+    <!-- PROJECTS -->
+    <section class="block" id="projects">
+      <div class="head reveal"><b>03.</b><h2>Things I've built</h2></div>
+      <p class="intro reveal">School projects and things I made in my own time. None of them are huge, but each one is real, runs, and taught me something about shipping software.</p>
+      <div class="grid3">
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Languages -->
-        <div class="bg-white border border-zinc-200 rounded-xl p-6 hover:border-zinc-400 hover:shadow-sm transition-all">
-          <div class="flex items-center gap-2 mb-3">
-            <i class="fa-solid fa-code text-zinc-900"></i>
-            <h3 class="font-display text-base font-bold text-zinc-900">Ngôn Ngữ Lập Trình</h3>
-          </div>
-          <p class="text-zinc-500 text-xs mb-4">Các ngôn ngữ đã học và ứng dụng trong dự án:</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded text-xs font-mono text-zinc-800">Python</span>
-            <span class="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded text-xs font-mono text-zinc-800">Java</span>
-            <span class="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded text-xs font-mono text-zinc-800">C#</span>
-            <span class="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded text-xs font-mono text-zinc-800">JavaScript</span>
-            <span class="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded text-xs font-mono text-zinc-800">HTML5 / CSS3</span>
-          </div>
-        </div>
-
-        <!-- Databases -->
-        <div class="bg-white border border-zinc-200 rounded-xl p-6 hover:border-zinc-400 hover:shadow-sm transition-all">
-          <div class="flex items-center gap-2 mb-3">
-            <i class="fa-solid fa-database text-zinc-900"></i>
-            <h3 class="font-display text-base font-bold text-zinc-900">Cơ Sở Dữ Liệu</h3>
-          </div>
-          <p class="text-zinc-500 text-xs mb-4">Quản lý và truy vấn dữ liệu quan hệ & cloud:</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded text-xs font-mono text-zinc-800">MySQL</span>
-            <span class="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded text-xs font-mono text-zinc-800">PostgreSQL</span>
-            <span class="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded text-xs font-mono text-zinc-800">SQL Server</span>
-            <span class="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded text-xs font-mono text-zinc-800">Supabase</span>
-          </div>
-        </div>
-
-        <!-- DevOps & Tools -->
-        <div class="bg-white border border-zinc-200 rounded-xl p-6 hover:border-zinc-400 hover:shadow-sm transition-all">
-          <div class="flex items-center gap-2 mb-3">
-            <i class="fa-solid fa-screwdriver-wrench text-zinc-900"></i>
-            <h3 class="font-display text-base font-bold text-zinc-900">DevOps & Công Cụ</h3>
-          </div>
-          <p class="text-zinc-500 text-xs mb-4">Môi trường phát triển và vận hành hệ thống:</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded text-xs font-mono text-zinc-800">Docker</span>
-            <span class="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded text-xs font-mono text-zinc-800">Git / GitHub</span>
-            <span class="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded text-xs font-mono text-zinc-800">Postman</span>
-            <span class="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded text-xs font-mono text-zinc-800">VS Code</span>
-            <span class="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded text-xs font-mono text-zinc-800">Visual Studio</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="py-20 border-t border-zinc-200">
-      <div class="flex items-center justify-between mb-3">
-        <div class="flex items-center gap-3">
-          <span class="font-mono text-zinc-900 font-bold text-sm">04.</span>
-          <h2 class="font-display text-2xl sm:text-3xl font-bold text-zinc-900 tracking-tight">Dự Án</h2>
-          <div class="h-[1px] w-24 sm:w-48 bg-zinc-200 ml-4 hidden sm:block"></div>
-        </div>
-      </div>
-      <p class="text-zinc-500 text-sm mb-10 max-w-xl">
-        Các dự án đang trong giai đoạn kiến trúc và hoàn thiện. Khung bên dưới đã được chuẩn hóa sẵn sàng để cập nhật thông tin.
-      </p>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-        <!-- Blueprint Card 1 -->
-        <div class="group bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-md rounded-xl p-6 flex flex-col justify-between transition-all duration-300">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs font-semibold text-zinc-700 bg-zinc-100 border border-zinc-200 px-2 py-0.5 rounded">
-                // ARCHITECTING
-              </span>
-              <div class="flex gap-3 text-zinc-400 group-hover:text-zinc-700 transition-colors">
-                <i class="fa-brands fa-github text-base"></i>
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-              </div>
-            </div>
-
-            <h3 class="font-display text-lg font-bold text-zinc-900 group-hover:text-black transition-colors mb-2">
-              Automated CI/CD & Deploy Engine
-            </h3>
-            <p class="text-zinc-600 text-sm leading-relaxed mb-6">
-              Khung kiến trúc tự động hóa build, test và deploy các dịch vụ backend bằng container Docker, tối ưu thời gian rollout phiên bản mới.
-            </p>
-          </div>
-
-          <div>
-            <div class="flex flex-wrap gap-2 font-mono text-xs text-zinc-500">
-              <span>Docker</span>
-              <span>•</span>
-              <span>Python</span>
-              <span>•</span>
-              <span>Shell Script</span>
+        <article class="card proj reveal">
+          <div class="proj-top">
+            <span class="kind">Side project</span>
+            <div class="proj-links">
+              <a href="https://thetlv.github.io/kioku-get/" target="_blank" rel="noopener noreferrer" aria-label="Kioku download page"><i class="fa-solid fa-download"></i></a>
+              <a href="https://github.com/TheTLV/kioku-deploy" target="_blank" rel="noopener noreferrer" aria-label="Kioku releases on GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
-        </div>
+          <h3>Kioku</h3>
+          <p>A spaced-repetition learning app that turns your own notes into review cards, with LLM help for curating them. Shipped as portable Linux and Windows builds.</p>
+          <div class="stack">ASP.NET Core 9 · Razor Pages · LLM</div>
+        </article>
 
-        <!-- Blueprint Card 2 -->
-        <div class="group bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-md rounded-xl p-6 flex flex-col justify-between transition-all duration-300">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs font-semibold text-zinc-700 bg-zinc-100 border border-zinc-200 px-2 py-0.5 rounded">
-                // IN DEVELOPMENT
-              </span>
-              <div class="flex gap-3 text-zinc-400 group-hover:text-zinc-700 transition-colors">
-                <i class="fa-brands fa-github text-base"></i>
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-              </div>
-            </div>
-
-            <h3 class="font-display text-lg font-bold text-zinc-900 group-hover:text-black transition-colors mb-2">
-              E-Commerce Microservices Core
-            </h3>
-            <p class="text-zinc-600 text-sm leading-relaxed mb-6">
-              Hệ thống xử lý nghiệp vụ đơn hàng và người dùng phân tán, tích hợp cơ sở dữ liệu PostgreSQL và giao tiếp đồng bộ qua RESTful API.
-            </p>
-          </div>
-
-          <div>
-            <div class="flex flex-wrap gap-2 font-mono text-xs text-zinc-500">
-              <span>C#</span>
-              <span>•</span>
-              <span>PostgreSQL</span>
-              <span>•</span>
-              <span>Docker</span>
+        <article class="card proj reveal">
+          <div class="proj-top">
+            <span class="kind">University capstone</span>
+            <div class="proj-links">
+              <a href="https://github.com/TheTLV/swr-ai-grading-sever1-backend" target="_blank" rel="noopener noreferrer" aria-label="Grading system on GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
-        </div>
+          <h3>AI-Assisted Grading System</h3>
+          <p>Backend for lecturer and exam management with AI-assisted grading. One of two servers in the system; the other handles students taking exams offline.</p>
+          <div class="stack">C# · ASP.NET · REST API</div>
+        </article>
 
-        <!-- Blueprint Card 3 -->
-        <div class="group bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-md rounded-xl p-6 flex flex-col justify-between transition-all duration-300">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs font-semibold text-zinc-700 bg-zinc-100 border border-zinc-200 px-2 py-0.5 rounded">
-                // PROTOTYPE
-              </span>
-              <div class="flex gap-3 text-zinc-400 group-hover:text-zinc-700 transition-colors">
-                <i class="fa-brands fa-github text-base"></i>
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-              </div>
-            </div>
-
-            <h3 class="font-display text-lg font-bold text-zinc-900 group-hover:text-black transition-colors mb-2">
-              Database Migration & Sync Utility
-            </h3>
-            <p class="text-zinc-600 text-sm leading-relaxed mb-6">
-              Công cụ hỗ trợ đồng bộ và backup dữ liệu định kỳ giữa MySQL, PostgreSQL và Supabase, thông báo trạng thái qua webhook.
-            </p>
-          </div>
-
-          <div>
-            <div class="flex flex-wrap gap-2 font-mono text-xs text-zinc-500">
-              <span>Python</span>
-              <span>•</span>
-              <span>MySQL</span>
-              <span>•</span>
-              <span>Supabase</span>
+        <article class="card proj reveal">
+          <div class="proj-top">
+            <span class="kind">Side project</span>
+            <div class="proj-links">
+              <a href="https://github.com/TheTLV/anime-multiverse-wallpaper" target="_blank" rel="noopener noreferrer" aria-label="Wallpaper engine on GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
-        </div>
+          <h3>Anime Multiverse Wallpaper</h3>
+          <p>A pipeline that renders a seamless 20-minute 1080p 60 fps live wallpaper, with GPU-accelerated encoding and a Docker setup.</p>
+          <div class="stack">Python · FFmpeg · Docker</div>
+        </article>
+
+        <article class="card proj reveal">
+          <div class="proj-top">
+            <span class="kind">Game</span>
+            <div class="proj-links">
+              <a href="https://github.com/TheTLV/The-Green-Memoir" target="_blank" rel="noopener noreferrer" aria-label="The Green Memoir on GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <h3>The Green Memoir</h3>
+          <p>A 2D top-down farming game about a city student who moves back to the countryside, built around SOLID and object-oriented design.</p>
+          <div class="stack">Unity · C#</div>
+        </article>
+
+        <article class="card proj reveal">
+          <div class="proj-top">
+            <span class="kind">Team project</span>
+            <div class="proj-links">
+              <a href="https://github.com/TheTLV/BloodDonationSupportSystem" target="_blank" rel="noopener noreferrer" aria-label="Blood donation system on GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Blood Donation Support</h3>
+          <p>A system that connects blood donors with people who need blood, built as a university team project.</p>
+          <div class="stack">C# · .NET</div>
+        </article>
+
+        <article class="card proj reveal">
+          <div class="proj-top">
+            <span class="kind">Small tool</span>
+            <div class="proj-links">
+              <a href="https://github.com/TheTLV/Extract_PDF_to_TXT_and_Extract_Image" target="_blank" rel="noopener noreferrer" aria-label="PDF extractor on GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <h3>PDF Text &amp; Image Extractor</h3>
+          <p>A script that converts a PDF into Markdown text and saves every embedded image as PNG.</p>
+          <div class="stack">Python · Docling · PyMuPDF</div>
+        </article>
 
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="py-24 border-t border-zinc-200 text-center">
-      <span class="font-mono text-zinc-500 text-xs font-semibold tracking-wider uppercase mb-3 inline-block">
-        05. What's Next?
-      </span>
-      <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-zinc-950 mb-4 tracking-tight">
-        Liên Hệ Với Tôi
-      </h2>
-      <p class="max-w-xl mx-auto text-zinc-600 text-base mb-8 leading-relaxed">
-        Tôi luôn sẵn sàng trao đổi về các cơ hội hợp tác, dự án DevOps/Backend hoặc thảo luận về giải pháp hạ tầng.
-      </p>
-
-      <!-- Email 1-Click Copy (White Minimalist) -->
-      <div class="inline-flex flex-col sm:flex-row items-center gap-3 bg-zinc-50 border border-zinc-300 rounded-xl p-3 sm:px-6 sm:py-3 mb-10 shadow-xs hover:border-zinc-500 transition-all">
-        <i class="fa-regular fa-envelope text-zinc-700 text-lg"></i>
-        <span id="emailText" class="font-mono font-medium text-lg text-zinc-900 select-all">phuhn1080@gmail.com</span>
-        <button id="copyBtn" onclick="copyEmail()" 
-                class="px-3 py-1.5 rounded-md bg-zinc-900 hover:bg-black text-white transition-all text-xs font-mono font-semibold shadow-xs">
-          <i class="fa-regular fa-copy mr-1"></i> <span id="copyLabel">COPY</span>
-        </button>
+    <!-- LEARNING -->
+    <section class="block" id="learning">
+      <div class="head reveal"><b>04.</b><h2>Learning roadmap</h2></div>
+      <p class="intro reveal">Where I am right now, and what I'm working toward next.</p>
+      <div class="road">
+        <div class="card reveal">
+          <h3><span class="pill" style="background:#10b981"></span>Using at work</h3>
+          <p class="note">Tools I use regularly.</p>
+          <div class="tags">
+            <span class="tag">Docker</span><span class="tag">Python</span><span class="tag">PostgreSQL</span>
+            <span class="tag">Git</span><span class="tag">C# / .NET</span>
+          </div>
+          <div class="bar"><i style="--w:100%;background:#10b981"></i></div>
+        </div>
+        <div class="card reveal">
+          <h3><span class="pill" style="background:#f59e0b"></span>Learning now</h3>
+          <p class="note">Getting comfortable with these.</p>
+          <div class="tags">
+            <span class="tag">Linux</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span><span class="tag">Nginx</span>
+          </div>
+          <div class="bar"><i style="--w:55%;background:#f59e0b"></i></div>
+        </div>
+        <div class="card reveal">
+          <h3><span class="pill" style="background:#a1a1aa"></span>Up next</h3>
+          <p class="note">On the list once the basics are solid.</p>
+          <div class="tags">
+            <span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">Cloud (AWS / Azure)</span><span class="tag">Monitoring</span>
+          </div>
+          <div class="bar"><i style="--w:15%;background:#a1a1aa"></i></div>
+        </div>
       </div>
+    </section>
 
-      <!-- Social Links -->
-      <div class="flex justify-center items-center gap-4">
-        <a href="https://github.com/TheTLV" target="_blank" rel="noopener noreferrer"
-           class="w-11 h-11 rounded-lg border border-zinc-200 bg-white hover:bg-zinc-100 flex items-center justify-center text-zinc-700 hover:text-black transition-all text-lg shadow-xs">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://www.facebook.com/susan1080" target="_blank" rel="noopener noreferrer"
-           class="w-11 h-11 rounded-lg border border-zinc-200 bg-white hover:bg-zinc-100 flex items-center justify-center text-zinc-700 hover:text-blue-600 transition-all text-lg shadow-xs">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="mailto:phuhn1080@gmail.com"
-           class="w-11 h-11 rounded-lg border border-zinc-200 bg-white hover:bg-zinc-100 flex items-center justify-center text-zinc-700 hover:text-red-500 transition-all text-lg shadow-xs">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
+    <!-- CONTACT -->
+    <section class="block contact" id="contact">
+      <p class="mono reveal" style="color:var(--faint);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600">05. Contact info</p>
+      <h2 class="reveal">Let's talk</h2>
+      <p class="reveal">I'm happy to chat about DevOps or backend roles, small collaborations, or just swap notes on what you're learning.</p>
+      <div class="mail reveal">
+        <i class="fa-regular fa-envelope"></i>
+        <span>phuhn1080@gmail.com</span>
+        <button id="copyBtn" type="button"><i class="fa-regular fa-copy"></i> <span id="copyLabel">COPY</span></button>
+      </div>
+      <div class="socials reveal">
+        <a href="mailto:phuhn1080@gmail.com" aria-label="Email" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/TheTLV" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.facebook.com/susan1080" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-zinc-200 py-8 bg-zinc-50 text-center">
-    <p class="font-mono text-zinc-500 text-xs">
-      Designed & Built by <span class="text-zinc-900 font-semibold">TheTLV</span>
-    </p>
-  </footer>
+  <footer>Designed &amp; built by Hoang Ngoc Phu (TheTLV)</footer>
 
   <script>
-    function copyEmail() {
-      const email = "phuhn1080@gmail.com";
-      navigator.clipboard.writeText(email).then(() => {
-        const label = document.getElementById("copyLabel");
-        label.innerText = "COPIED!";
-        setTimeout(() => {
-          label.innerText = "COPY";
-        }, 2000);
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const links = document.getElementById('links');
+    menuBtn.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      links.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    // Copy email
+    document.getElementById('copyBtn').addEventListener('click', () => {
+      navigator.clipboard.writeText('phuhn1080@gmail.com').then(() => {
+        const label = document.getElementById('copyLabel');
+        label.textContent = 'COPIED!';
+        setTimeout(() => { label.textContent = 'COPY'; }, 2000);
       });
+    });
+
+    // Scroll reveal
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(el => el.classList.add('in'));
+    } else {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(el => io.observe(el));
     }
+
+    // Terminal animation
+    const script = [
+      { cmd: 'whoami', out: [['o', 'phu · devops engineer @ sendo']] },
+      { cmd: 'docker compose up -d', out: [['g', '✔ '], ['o', 'postgres  started\n'], ['g', '✔ '], ['o', 'api       started']] },
+      { cmd: 'python backup.py --db main', out: [['o', 'dumping... '], ['g', 'done (backup saved)']] },
+      { cmd: 'git push origin main', out: [['o', 'main -> main  '], ['g', '✔ pushed']] },
+      { cmd: 'echo "keep learning"', out: [['o', 'keep learning']] },
+    ];
+    const term = document.getElementById('term');
+    const caret = '<span class="caret"></span>';
+    const esc = s => s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+    const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+    function renderStatic() {
+      term.innerHTML = script.map(s =>
+        `<span class="p">$</span> ${esc(s.cmd)}\n` + s.out.map(([c, t]) => `<span class="${c}">${esc(t)}</span>`).join('')
+      ).join('\n') + `\n<span class="p">$</span> ${caret}`;
+    }
+
+    async function play() {
+      while (true) {
+        let html = '';
+        for (const step of script) {
+          const prefix = html + '<span class="p">$</span> ';
+          for (let i = 1; i <= step.cmd.length; i++) {
+            term.innerHTML = prefix + esc(step.cmd.slice(0, i)) + caret;
+            await sleep(45 + Math.random() * 45);
+          }
+          await sleep(350);
+          html = prefix + esc(step.cmd) + '\n' + step.out.map(([c, t]) => `<span class="${c}">${esc(t)}</span>`).join('') + '\n';
+          term.innerHTML = html + caret;
+          await sleep(700);
+        }
+        term.innerHTML = html + '<span class="p">$</span> ' + caret;
+        await sleep(3500);
+      }
+    }
+    reduce ? renderStatic() : play();
   </script>
 </body>
 </html>
