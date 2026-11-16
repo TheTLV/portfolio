@@ -209,7 +209,7 @@
         <a href="#about"><b>01.</b>About</a>
         <a href="#work"><b>02.</b>Work</a>
         <a href="#projects"><b>03.</b>Projects</a>
-        <a href="#learning"><b>04.</b>Learning</a>
+        <a href="#stack"><b>04.</b>Stack</a>
         <a href="#contact"><b>05.</b>Contact</a>
       </nav>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
@@ -226,15 +226,15 @@
         <h1>Hoang Ngoc Phu<span>.</span></h1>
         <div class="role">DevOps &amp; Software Engineer</div>
         <div class="prev">
-          Former DevOps Intern at
+          Previously DevOps Intern at
           <a href="https://www.sendo.vn/" target="_blank" rel="noopener noreferrer" title="Sendo" aria-label="Sendo website">
             <img src="assets/sendo-wordmark.svg" alt="Sendo" />
           </a>
         </div>
         <p class="lead">
-          I build backend services with <strong>.NET</strong>, containerize them with <strong>Docker</strong>
-          and automate the repetitive parts with <strong>Python</strong>. My work ranges from an AI-assisted
-          grading backend to a desktop app released for Linux and Windows.
+          I build <strong>.NET</strong> backends with clean architecture, containerize them with
+          <strong>Docker</strong> and automate the repetitive parts with <strong>Python</strong> and shell.
+          Recent work: an AI-assisted grading API and a self-hosted learning app shipped for Linux and Windows.
         </p>
         <div class="cta">
           <a href="#projects" class="btn btn-dark">See what I've built <i class="fa-solid fa-arrow-right"></i></a>
@@ -257,18 +257,18 @@
       <div class="about">
         <div class="reveal">
           <p>
-            I'm a software engineer from Vietnam focused on <strong>DevOps</strong>: getting code from a repository
-            to a running, reliable service. I did my DevOps internship at <strong>Sendo</strong>, an e-commerce
-            platform under FPT Group, working with containers, automation scripts and PostgreSQL.
+            I'm a software engineer from Vietnam focused on <strong>DevOps</strong> and <strong>backend development</strong>.
+            I care about the whole path from code to a running service: clean architecture, containers,
+            automation and the database underneath.
           </p>
           <p>
-            I like owning a project end to end. I've built a learning app with packaged Linux and Windows releases,
-            the backend for a university AI grading system, a GPU-accelerated video pipeline that runs in Docker,
-            and several Unity games.
+            I completed a <strong>DevOps internship at Sendo</strong>, one of Vietnam's major e-commerce platforms
+            (FPT Group), where I worked with the DevOps team on containers, automation scripts and PostgreSQL.
           </p>
           <p>
-            I prefer solid, maintainable solutions over quick fixes. The
-            <a href="#learning" style="text-decoration:underline">roadmap</a> below shows what I'm sharpening next.
+            On my own and in university teams, I've shipped a self-hosted learning app with Linux and Windows releases,
+            built the backend for an AI-assisted grading system, containerized a GPU-accelerated video pipeline,
+            and made games in Unity.
           </p>
         </div>
         <div class="card facts reveal">
@@ -276,8 +276,8 @@
           <ul>
             <li><span>Focus</span><span>DevOps &amp; Backend</span></li>
             <li><span>Experience</span><span>DevOps Intern @ Sendo</span></li>
+            <li><span>Core stack</span><span>.NET · Docker · Python</span></li>
             <li><span>Based in</span><span>Vietnam</span></li>
-            <li><span>Main stack</span><span>Docker · Python · .NET</span></li>
             <li><span>Status</span><span style="color:var(--ok)">Open to work</span></li>
           </ul>
         </div>
@@ -307,10 +307,10 @@
           <span class="tag"><i class="fa-solid fa-code"></i> C# / .NET</span>
         </div>
         <ul>
-          <li>Packaged and ran services in Docker containers, keeping images small and environments consistent.</li>
-          <li>Wrote Python scripts to automate routine infrastructure and data tasks, cutting down manual steps.</li>
-          <li>Helped operate PostgreSQL: indexes, backups, restores and query performance monitoring.</li>
-          <li>Supported deployments of backend services written in C# (.NET).</li>
+          <li>Worked with the DevOps team to containerize services with Docker and keep environments consistent.</li>
+          <li>Wrote Python scripts to automate routine infrastructure and data tasks.</li>
+          <li>Assisted with PostgreSQL operations: backups, restores, indexing and query performance checks.</li>
+          <li>Supported deployments of .NET backend services on a high-traffic e-commerce platform.</li>
         </ul>
       </div>
     </section>
@@ -318,49 +318,61 @@
     <!-- PROJECTS -->
     <section class="block" id="projects">
       <div class="head reveal"><b>03.</b><h2>Things I've built</h2></div>
-      <p class="intro reveal">A selection of things I've designed, built and shipped, from university work to my own projects.</p>
+      <p class="intro reveal">Selected work I've designed, built and shipped, solo and in teams.</p>
       <div class="grid3">
 
         <article class="card proj reveal">
           <div class="proj-top">
-            <span class="kind">Side project</span>
+            <span class="kind">Solo project</span>
             <div class="proj-links">
               <a href="https://thetlv.github.io/kioku-get/" target="_blank" rel="noopener noreferrer" aria-label="Kioku download page"><i class="fa-solid fa-download"></i></a>
               <a href="https://github.com/TheTLV/kioku-deploy" target="_blank" rel="noopener noreferrer" aria-label="Kioku releases on GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
           <h3>Kioku</h3>
-          <p>A spaced-repetition learning app that turns your own notes into review cards, with LLM help for curating them. Shipped as portable Linux and Windows builds.</p>
+          <p>A self-hosted spaced-repetition app that turns your own notes into review cards, with LLM-assisted card curation. Packaged and released as portable builds for Linux and Windows.</p>
           <div class="stack">ASP.NET Core 9 · Razor Pages · LLM</div>
         </article>
 
         <article class="card proj reveal">
           <div class="proj-top">
-            <span class="kind">University capstone</span>
+            <span class="kind">Capstone · team of 2</span>
             <div class="proj-links">
               <a href="https://github.com/TheTLV/swr-ai-grading-sever1-backend" target="_blank" rel="noopener noreferrer" aria-label="Grading system on GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
           <h3>AI-Assisted Grading System</h3>
-          <p>Backend for lecturer and exam management with AI-assisted grading. One of two servers in the system; the other handles students taking exams offline.</p>
-          <div class="stack">C# · ASP.NET · REST API</div>
+          <p>REST API for lecturer and exam management with AI-assisted grading. Clean Architecture in four layers, JWT auth, Swagger docs and unit tests with xUnit and Moq.</p>
+          <div class="stack">ASP.NET Core 8 · EF Core · PostgreSQL</div>
         </article>
 
         <article class="card proj reveal">
           <div class="proj-top">
-            <span class="kind">Side project</span>
+            <span class="kind">Team of 3</span>
             <div class="proj-links">
-              <a href="https://github.com/TheTLV/anime-multiverse-wallpaper" target="_blank" rel="noopener noreferrer" aria-label="Wallpaper engine on GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://github.com/TheTLV/BloodDonationSupportSystem" target="_blank" rel="noopener noreferrer" aria-label="Blood donation system on GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Blood Donation Support</h3>
+          <p>Web API that connects blood donors with recipients. Layered into controllers, services and repositories, and runs as a container stack with Docker Compose.</p>
+          <div class="stack">ASP.NET Core · Docker Compose</div>
+        </article>
+
+        <article class="card proj reveal">
+          <div class="proj-top">
+            <span class="kind">Solo project</span>
+            <div class="proj-links">
+              <a href="https://github.com/TheTLV/anime-multiverse-wallpaper" target="_blank" rel="noopener noreferrer" aria-label="Wallpaper pipeline on GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
           <h3>Anime Multiverse Wallpaper</h3>
-          <p>A pipeline that renders a seamless 20-minute 1080p 60 fps live wallpaper, with GPU-accelerated encoding and a Docker setup.</p>
-          <div class="stack">Python · FFmpeg · Docker</div>
+          <p>A video pipeline that produces a seamless 20-minute 1080p 60 fps live wallpaper. Uses GPU hardware acceleration (NVENC / VAAPI) for very low CPU usage and ships with Docker Compose.</p>
+          <div class="stack">Python · Shell · FFmpeg · Docker</div>
         </article>
 
         <article class="card proj reveal">
           <div class="proj-top">
-            <span class="kind">Game</span>
+            <span class="kind">Game · Unity</span>
             <div class="proj-links">
               <a href="https://github.com/TheTLV/The-Green-Memoir" target="_blank" rel="noopener noreferrer" aria-label="The Green Memoir on GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
@@ -372,60 +384,38 @@
 
         <article class="card proj reveal">
           <div class="proj-top">
-            <span class="kind">Team project</span>
+            <span class="kind">Team of 3</span>
             <div class="proj-links">
-              <a href="https://github.com/TheTLV/BloodDonationSupportSystem" target="_blank" rel="noopener noreferrer" aria-label="Blood donation system on GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://github.com/TheTLV/SmokingCessationSupportSystem" target="_blank" rel="noopener noreferrer" aria-label="Smoking cessation app on GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
-          <h3>Blood Donation Support</h3>
-          <p>A system that connects blood donors with people who need blood, built as a university team project.</p>
-          <div class="stack">C# · .NET</div>
-        </article>
-
-        <article class="card proj reveal">
-          <div class="proj-top">
-            <span class="kind">Small tool</span>
-            <div class="proj-links">
-              <a href="https://github.com/TheTLV/Extract_PDF_to_TXT_and_Extract_Image" target="_blank" rel="noopener noreferrer" aria-label="PDF extractor on GitHub"><i class="fa-brands fa-github"></i></a>
-            </div>
-          </div>
-          <h3>PDF Text &amp; Image Extractor</h3>
-          <p>A script that converts a PDF into Markdown text and saves every embedded image as PNG.</p>
-          <div class="stack">Python · Docling · PyMuPDF</div>
+          <h3>Smoking Cessation Support</h3>
+          <p>A desktop app that supports people who want to quit smoking, built on a layered architecture: business objects, data access, repositories and services.</p>
+          <div class="stack">C# · WPF</div>
         </article>
 
       </div>
     </section>
 
     <!-- LEARNING -->
-    <section class="block" id="learning">
-      <div class="head reveal"><b>04.</b><h2>Learning roadmap</h2></div>
-      <p class="intro reveal">What I work with today, and where I'm heading next.</p>
+    <section class="block" id="stack">
+      <div class="head reveal"><b>04.</b><h2>Tech stack</h2></div>
+      <p class="intro reveal">What I build with, and where I'm heading next.</p>
       <div class="road">
         <div class="card reveal">
-          <h3><span class="pill" style="background:#10b981"></span>Hands-on</h3>
-          <p class="note">Used in real projects and at Sendo.</p>
-          <div class="tags">
-            <span class="tag">Docker</span><span class="tag">Python</span><span class="tag">PostgreSQL</span>
-            <span class="tag">Git</span><span class="tag">C# / .NET</span>
-          </div>
-          <div class="bar"><i style="--w:100%;background:#10b981"></i></div>
+          <h3><span class="pill" style="background:#10b981"></span>Core</h3>
+          <p class="note">My everyday tools.</p>
+          <div class="tags"><span class="tag">C# / .NET</span><span class="tag">ASP.NET Core</span><span class="tag">Docker</span><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">Git</span></div>
         </div>
         <div class="card reveal">
-          <h3><span class="pill" style="background:#f59e0b"></span>Learning now</h3>
-          <p class="note">Building depth here right now.</p>
-          <div class="tags">
-            <span class="tag">Linux</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span><span class="tag">Nginx</span>
-          </div>
-          <div class="bar"><i style="--w:55%;background:#f59e0b"></i></div>
+          <h3><span class="pill" style="background:#3b82f6"></span>Also worked with</h3>
+          <p class="note">Used in real projects.</p>
+          <div class="tags"><span class="tag">EF Core</span><span class="tag">Docker Compose</span><span class="tag">Shell</span><span class="tag">MySQL</span><span class="tag">Supabase</span><span class="tag">Unity</span><span class="tag">WPF</span><span class="tag">Java</span><span class="tag">JavaScript</span></div>
         </div>
         <div class="card reveal">
-          <h3><span class="pill" style="background:#a1a1aa"></span>Up next</h3>
-          <p class="note">On the list once the basics are solid.</p>
-          <div class="tags">
-            <span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">Cloud (AWS / Azure)</span><span class="tag">Monitoring</span>
-          </div>
-          <div class="bar"><i style="--w:15%;background:#a1a1aa"></i></div>
+          <h3><span class="pill" style="background:#a1a1aa"></span>Exploring next</h3>
+          <p class="note">Where I'm taking my DevOps skills.</p>
+          <div class="tags"><span class="tag">GitHub Actions</span><span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">Cloud (AWS / Azure)</span></div>
         </div>
       </div>
     </section>
@@ -490,10 +480,10 @@
     // Terminal animation
     const script = [
       { cmd: 'whoami', out: [['o', 'phu · devops & software engineer']] },
-      { cmd: 'docker compose up -d', out: [['g', '✔ '], ['o', 'postgres  started\n'], ['g', '✔ '], ['o', 'api       started']] },
-      { cmd: 'python backup.py --db main', out: [['o', 'dumping... '], ['g', 'done (backup saved)']] },
-      { cmd: 'git push origin main', out: [['o', 'main -> main  '], ['g', '✔ pushed']] },
-      { cmd: 'echo "keep learning"', out: [['o', 'keep learning']] },
+      { cmd: 'dotnet test', out: [['g', '✔ '], ['o', 'all tests passed']] },
+      { cmd: 'docker compose up -d', out: [['g', '✔ '], ['o', 'db   started\n'], ['g', '✔ '], ['o', 'api  started']] },
+      { cmd: 'dotnet publish -c Release -r linux-x64', out: [['g', '✔ '], ['o', 'Kioku-linux-x64.zip']] },
+      { cmd: 'git push origin main', out: [['g', '✔ '], ['o', 'pushed']] },
     ];
     const term = document.getElementById('term');
     const caret = '<span class="caret"></span>';
